@@ -1,0 +1,225 @@
+/* Reset Dasar */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif; /* Menggunakan font serif agar kesan klasik */
+    background-color: #1a1a1a; /* Latar gelap elegan */
+    color: #e0e0e0;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+}
+
+h1 {
+    color: #d4af37; /* Warna emas untuk kesan mewah */
+    margin-bottom: 10px;
+}
+
+/* Efek Teks Bergerak */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: #333;
+    padding: 10px 0;
+    border-top: 1px solid #d4af37;
+    border-bottom: 1px solid #d4af37;
+}
+
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Navigasi Menu */
+.main-menu {
+    background: #222;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #d4af37;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.main-menu a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Layout Produk */
+.gallery-section {
+    padding: 20px;
+}
+
+h2 {
+    border-left: 4px solid #d4af37;
+    padding-left: 10px;
+    margin-top: 40px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.item-card {
+    background: #262626;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 5px;
+    width: 220px;
+    text-align: center;
+}
+
+.item-card img {
+    width: 100%;
+    border-bottom: 1px solid #d4af37;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #d4af37;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+/* 1. Kode untuk Laptop/Semua Layar (Taruh di luar @media) */
+.brand-name {
+    display: block !important;
+    font-size: 3.5rem !important; /* Ukuran besar yang pas */
+    font-weight: 900 !important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 30px 0 !important;
+    
+    /* Gunakan transisi warna halus */
+    animation: colorShift 8s infinite alternate;
+}
+
+/* Animasi perubahan warna teks dan bayangan halus */
+@keyframes colorShift {
+    0% { 
+        color: #d4af37; /* Emas */
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+    33% { 
+        color: #ffffff; /* Putih Bersih */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    66% { 
+        color: #ff4d4d; /* Merah Marun/Berani */
+        text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+    }
+    100% { 
+        color: #aeaeae; /* Perak/Pamor */
+        text-shadow: 0 0 10px rgba(174, 174, 174, 0.5);
+    }
+}
+
+/* Penyesuaian untuk HP agar tidak kepotong */
+@media (max-width: 600px) {
+    .brand-name {
+        font-size: 1.8rem !important;
+        letter-spacing: 2px;
+        margin: 20px 0 !important;
+    }
+}
+
+/* 3. Animasi (Taruh paling bawah) */
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #d4af37, 0 0 30px #d4af37;
+    }
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #d4af37, 0 0 35px #d4af37, 0 0 40px #d4af37, 0 0 50px #d4af37;
+    }
+}
+
+/* Agar di HP ukurannya menyesuaikan (tidak kepotong) */
+@media (max-width: 600px) {
+    .brand-name {
+        font-size: 1.8rem !important;
+        letter-spacing: 2px;
+    }
+}
+/* Paksa teks agar tidak kepotong di HP */
+.welcome-section h1, 
+.welcome-section h2, 
+.brand-name {
+    font-size: 1.5rem !important; /* Kecilkan ukuran font agar muat */
+    white-space: normal !important; /* Biarkan teks turun ke bawah */
+    overflow: visible !important; 
+    height: auto !important; /* Jangan batasi tinggi kotak */
+    line-height: 1.4 !important;
+    text-align: center;
+}
+
+/* Pastikan container pembungkusnya juga fleksibel */
+.welcome-section {
+    padding: 20px 5px !important;
+    height: auto !important;
+}
+
+/* Supaya teks berjalan (marquee) tidak menumpuk */
+.marquee-container {
+    height: auto !important;
+    padding: 10px 0;
+}
+/* Styling teks Eling lan Mawas Diri */
+.running-text-color {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Animasi perubahan warna */
+    animation: colorChange 5s infinite alternate;
+}
+
+/* Definisi perubahan warna */
+@keyframes colorChange {
+    0% { color: #d4af37; }    /* Emas (Gold) */
+    25% { color: #ffffff; }   /* Putih */
+    50% { color: #ff4d4d; }   /* Merah */
+    75% { color: #aeaeae; }   /* Perak */
+    100% { color: #d4af37; }  /* Kembali ke Emas */
+}
+
+/* Pastikan di HP tidak kepotong */
+@media (max-width: 600px) {
+    .running-text-color {
+        font-size: 1.2rem;
+        padding: 10px 5px;
+    }
+}
